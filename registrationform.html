@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 700px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        #title {
+            text-align: center;
+            color: #333;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        fieldset {
+            margin-top: 20px;
+            padding: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        .radio,
+        .checkbox {
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 12px 25px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #submitButton {
+            background-color: green;
+            color: white;
+        }
+
+        #resetButton {
+            background-color: red;
+            color: white;
+        }
+
+        #clearButton {
+            background-color: gray;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="title">Job Application Form</h1>
+
+    <p>Please fill in all the required details to apply for the job.</p>
+
+
+
+    <form>
+
+        <fieldset>
+
+            <legend>Personal Details</legend>
+
+           
+
+            <label for="fullName">Full Name:</label>
+
+            <input 
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="input-box"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+           
+
+            <label for="email">Email Address:</label>
+
+            <input 
+                type="email"
+                id="email"
+                name="email"
+                class="input-box"
+                placeholder="example@gmail.com"
+                required
+            >
+
+
+            
+
+            <label for="password">Create Password:</label>
+
+            <input 
+                type="password"
+                id="password"
+                name="password"
+                class="input-box"
+                placeholder="Create a password"
+                required
+            >
+
+
+            
+
+            <label for="phone">Phone Number:</label>
+
+            <input 
+                type="tel"
+                id="phone"
+                name="phone"
+                class="input-box"
+                placeholder="Enter your phone number"
+                required
+            >
+
+
+           
+
+            <label for="dob">Date of Birth:</label>
+
+            <input 
+                type="date"
+                id="dob"
+                name="dob"
+                class="input-box"
+            >
+
+
+
+            <label>Gender:</label>
+
+            <div class="radio">
+
+                <input 
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                >
+                <label for="male" style="display:inline;">
+                    Male
+                </label>
+
+                <input 
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                >
+                <label for="female" style="display:inline;">
+                    Female
+                </label>
+
+                <input 
+                    type="radio"
+                    id="other"
+                    name="gender"
+                    value="other"
+                >
+                <label for="other" style="display:inline;">
+                    Other
+                </label>
+
+            </div>
+
+        </fieldset>
+
+
+
+        <fieldset>
+
+            <legend>Job Details</legend>
+
+
+
+            <label for="position">Position Applying For:</label>
+
+            <select 
+                id="position"
+                name="position"
+                class="input-box"
+                required
+            >
+
+                <option value="">
+                    -- Select Position --
+                </option>
+
+                <option value="software-developer">
+                    Software Developer
+                </option>
+
+                <option value="java-developer">
+                    Java Developer
+                </option>
+
+                <option value="web-developer">
+                    Web Developer
+                </option>
+
+                <option value="frontend-developer">
+                    Frontend Developer
+                </option>
+
+                <option value="backend-developer">
+                    Backend Developer
+                </option>
+
+                <option value="fullstack-developer">
+                    Full Stack Developer
+                </option>
+
+                <option value="data-analyst">
+                    Data Analyst
+                </option>
+
+                <option value="testing">
+                    Software Tester
+                </option>
+
+            </select>
+
+
+
+            <label for="location">Preferred Job Location:</label>
+
+            <select 
+                id="location"
+                name="location"
+                class="input-box"
+            >
+
+                <option value="">-- Select Location --</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="chennai">Chennai</option>
+                <option value="pune">Pune</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="remote">Remote</option>
+
+            </select>
+
+
+
+            <label for="experience">
+                Years of Experience:
+            </label>
+
+            <input
+                type="number"
+                id="experience"
+                name="experience"
+                class="input-box"
+                min="0"
+                max="30"
+                placeholder="Example: 2"
+            >
+
+
+
+            <label for="salary">
+                Expected Salary (₹ per year):
+            </label>
+
+            <input
+                type="number"
+                id="salary"
+                name="salary"
+                class="input-box"
+                placeholder="Example: 500000"
+            >
+
+
+
+            <label for="joiningDate">
+                Available Joining Date:
+            </label>
+
+            <input
+                type="date"
+                id="joiningDate"
+                name="joiningDate"
+                class="input-box"
+            >
+
+
+
+            <label>Preferred Work Type:</label>
+
+            <div class="radio">
+
+                <input
+                    type="radio"
+                    id="office"
+                    name="workType"
+                    value="office"
+                >
+
+                <label for="office" style="display:inline;">
+                    Office
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="hybrid"
+                    name="workType"
+                    value="hybrid"
+                >
+
+                <label for="hybrid" style="display:inline;">
+                    Hybrid
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="remoteWork"
+                    name="workType"
+                    value="remote"
+                >
+
+                <label for="remoteWork" style="display:inline;">
+                    Remote
+                </label>
+
+            </div>
+
+        </fieldset>
+
+
+
+        <fieldset>
+
+            <legend>Education Details</legend>
+
+
+
+            <label for="qualification">
+                Highest Qualification:
+            </label>
+
+            <select
+                id="qualification"
+                name="qualification"
+                class="input-box"
+            >
+
+                <option value="">
+                    -- Select Qualification --
+                </option>
+
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="diploma">Diploma</option>
+                <option value="btech">B.Tech / B.E</option>
+                <option value="bca">BCA</option>
+                <option value="bsc">B.Sc</option>
+                <option value="mca">MCA</option>
+                <option value="mtech">M.Tech</option>
+                <option value="mba">MBA</option>
+
+            </select>
+
+
+
+            <label for="university">
+                University / College:
+            </label>
+
+            <input
+                type="text"
+                id="university"
+                name="university"
+                class="input-box"
+                placeholder="Enter your college/university"
+            >
+
+
+
+            <label for="graduationYear">
+                Graduation Year:
+            </label>
+
+            <input
+                type="number"
+                id="graduationYear"
+                name="graduationYear"
+                class="input-box"
+                min="1950"
+                max="2030"
+                placeholder="Example: 2026"
+            >
+
+
+
+            <label for="percentage">
+                Percentage / CGPA:
+            </label>
+
+            <input
+                type="number"
+                id="percentage"
+                name="percentage"
+                class="input-box"
+                step="0.01"
+                placeholder="Example: 85.50"
+            >
+
+        </fieldset>
+
+
+
+        <fieldset>
+
+            <legend>Skills</legend>
+
+
+            <label>
+                Select Your Skills:
+            </label>
+
+            <div class="checkbox">
+
+                <input
+                    type="checkbox"
+                    id="java"
+                    name="skills"
+                    value="java"
+                >
+                <label for="java" style="display:inline;">
+                    Java
+                </label>
+
+                <br>
+
+                <input
+                    type="checkbox"
+                    id="html"
+                    name="skills"
+                    value="html"
+                >
+                <label for="html" style="display:inline;">
+                    HTML
+                </label>
+
+                <br>
+
+                <input
+                    type="checkbox"
+                    id="css"
+                    name="skills"
+                    value="css"
+                >
+                <label for="css" style="display:inline;">
+                    CSS
+                </label>
+
+                <br>
+
+                <input
+                    type="checkbox"
+                    id="javascript"
+                    name="skills"
+                    value="javascript"
+                >
+                <label for="javascript" style="display:inline;">
+                    JavaScript
+                </label>
+
+                <br>
+
+                <input
+                    type="checkbox"
+                    id="sql"
+                    name="skills"
+                    value="sql"
+                >
+                <label for="sql" style="display:inline;">
+                    SQL
+                </label>
+
+                <br>
+
+                <input
+                    type="checkbox"
+                    id="spring"
+                    name="skills"
+                    value="spring"
+                >
+                <label for="spring" style="display:inline;">
+                    Spring Boot
+                </label>
+
+            </div>
+
+
+
+            <label for="resume">
+                Upload Resume:
+            </label>
+
+            <input
+                type="file"
+                id="resume"
+                name="resume"
+                class="input-box"
+                accept=".pdf,.doc,.docx"
+                required
+            >
+
+
+
+            <label for="portfolio">
+                Portfolio Website:
+            </label>
+
+            <input
+                type="url"
+                id="portfolio"
+                name="portfolio"
+                class="input-box"
+                placeholder="https://example.com"
+            >
+
+        </fieldset>
+
+
+
+        <fieldset>
+
+            <legend>Address Details</legend>
+
+
+            <label for="address">
+                Full Address:
+            </label>
+
+            <textarea
+                id="address"
+                name="address"
+                class="input-box"
+                rows="5"
+                placeholder="Enter your complete address"
+            ></textarea>
+
+
+            <label for="city">
+                City:
+            </label>
+
+            <input
+                type="text"
+                id="city"
+                name="city"
+                class="input-box"
+                placeholder="Enter your city"
+            >
+
+
+            <label for="pincode">
+                PIN Code:
+            </label>
+
+            <input
+                type="number"
+                id="pincode"
+                name="pincode"
+                class="input-box"
+                placeholder="Enter PIN code"
+            >
+
+        </fieldset>
+
+
+
+        <fieldset>
+
+            <legend>Additional Information</legend>
+
+
+
+            <label for="source">
+                How did you hear about this job?
+            </label>
+
+            <select
+                id="source"
+                name="source"
+                class="input-box"
+            >
+
+                <option value="">
+                    -- Select an option --
+                </option>
+
+                <option value="linkedin">
+                    LinkedIn
+                </option>
+
+                <option value="naukri">
+                    Naukri
+                </option>
+
+                <option value="company">
+                    Company Website
+                </option>
+
+                <option value="friend">
+                    Friend / Referral
+                </option>
+
+                <option value="college">
+                    College
+                </option>
+
+                <option value="other">
+                    Other
+                </option>
+
+            </select>
+
+
+
+            <label for="search">
+                Search for a skill:
+            </label>
+
+            <input
+                type="search"
+                id="search"
+                name="search"
+                class="input-box"
+                placeholder="Search..."
+            >
+
+
+
+            <label for="interviewTime">
+                Preferred Interview Time:
+            </label>
+
+            <input
+                type="time"
+                id="interviewTime"
+                name="interviewTime"
+                class="input-box"
+            >
+
+
+
+            <label for="notice">
+                Notice Period (Days):
+            </label>
+
+            <input
+                type="range"
+                id="notice"
+                name="notice"
+                min="0"
+                max="90"
+                value="30"
+            >
+
+
+
+            <label for="color">
+                Choose a profile color:
+            </label>
+
+            <input
+                type="color"
+                id="color"
+                name="color"
+            >
+
+
+
+            <label for="about">
+                Tell us about yourself:
+            </label>
+
+            <textarea
+                id="about"
+                name="about"
+                class="input-box"
+                rows="6"
+                placeholder="Write something about yourself..."
+            ></textarea>
+
+        </fieldset>
+
+
+
+        <fieldset>
+
+            <legend>Confirmation</legend>
+
+            <input
+                type="checkbox"
+                id="declaration"
+                name="declaration"
+                required
+            >
+
+            <label
+                for="declaration"
+                style="display:inline;"
+            >
+                I confirm that the information provided above
+                is correct.
+            </label>
+
+            <br><br>
+
+            <input
+                type="checkbox"
+                id="updates"
+                name="updates"
+                value="yes"
+            >
+
+            <label
+                for="updates"
+                style="display:inline;"
+            >
+                I would like to receive job updates by email.
+            </label>
+
+        </fieldset>
+
+
+
+        <button
+            type="submit"
+            id="submitButton"
+            class="button"
+        >
+            Submit Application
+        </button>
+
+
+        <button
+            type="reset"
+            id="resetButton"
+            class="button"
+        >
+            Reset Form
+        </button>
+
+
+        <button
+            type="button"
+            id="clearButton"
+            class="button"
+        >
+            Cancel
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

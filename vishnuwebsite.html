@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vishnu's Tech Website</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        article {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #333;
+            border-radius: 5px;
+        }
+
+        article h3 {
+            margin-bottom: 10px;
+        }
+
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        figure img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        aside {
+            background-color: #e8f4ff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        aside h3 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        details {
+            background-color: #eee;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        mark {
+            background-color: yellow;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        footer address {
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Vishnu's Tech Website</h1>
+        <p>Learn HTML, CSS, Java and Web Development</p>
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#articles">Articles</a>
+        <a href="#about">About</a>
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HOME SECTION -->
+        <section id="home">
+
+            <h2>Welcome to My Website</h2>
+
+            <p>
+                Welcome to my technology website.
+                Here you can learn
+                <mark>Web Development</mark>
+                and programming.
+            </p>
+
+            <!-- FIGURE -->
+            <figure>
+                <img src="https://picsum.photos/300/180"
+                     alt="Technology image">
+
+                <figcaption>
+                    Learning technology and web development.
+                </figcaption>
+            </figure>
+
+        </section>
+
+
+        <!-- COURSES SECTION -->
+        <section id="courses">
+
+            <h2>Popular Courses</h2>
+
+            <!-- ARTICLE 1 -->
+            <article>
+
+                <h3>HTML Course</h3>
+
+                <p>
+                    Learn HTML from basic tags to advanced
+                    semantic elements.
+                </p>
+
+                <p>
+                    Course started on
+                    <time datetime="2026-09-01">
+                        September 1, 2026
+                    </time>
+                </p>
+
+            </article>
+
+
+            <!-- ARTICLE 2 -->
+            <article>
+
+                <h3>CSS Course</h3>
+
+                <p>
+                    Learn how to design beautiful and
+                    responsive websites using CSS.
+                </p>
+
+            </article>
+
+
+            <!-- ARTICLE 3 -->
+            <article>
+
+                <h3>Java Programming</h3>
+
+                <p>
+                    Learn Java programming, OOP,
+                    exception handling and more.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- ASIDE -->
+        <aside>
+
+            <h3>💡 Did You Know?</h3>
+
+            <p>
+                Semantic HTML helps search engines and
+                screen readers understand the structure
+                of a webpage.
+            </p>
+
+        </aside>
+
+
+        <!-- ARTICLES SECTION -->
+        <section id="articles">
+
+            <h2>Latest Articles</h2>
+
+            <article>
+
+                <h3>What is Semantic HTML?</h3>
+
+                <p>
+                    Semantic HTML uses meaningful elements
+                    such as
+                    <strong>&lt;header&gt;</strong>,
+                    <strong>&lt;nav&gt;</strong>,
+                    <strong>&lt;main&gt;</strong>,
+                    and
+                    <strong>&lt;footer&gt;</strong>.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>Why Learn HTML?</h3>
+
+                <p>
+                    HTML is the basic building block
+                    of every website.
+                </p>
+
+                <ul>
+                    <li>Easy to learn</li>
+                    <li>Used to create webpages</li>
+                    <li>Works with CSS and JavaScript</li>
+                    <li>Important for web development</li>
+                </ul>
+
+            </article>
+
+        </section>
+
+
+        <!-- DETAILS AND SUMMARY -->
+        <section>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What is HTML?</summary>
+
+                <p>
+                    HTML stands for HyperText Markup Language.
+                    It is used to create the structure of webpages.
+                </p>
+            </details>
+
+
+            <details>
+                <summary>What is CSS?</summary>
+
+                <p>
+                    CSS stands for Cascading Style Sheets.
+                    It is used to style webpages.
+                </p>
+            </details>
+
+
+            <details>
+                <summary>What is JavaScript?</summary>
+
+                <p>
+                    JavaScript is used to add functionality
+                    and interactivity to webpages.
+                </p>
+            </details>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am learning programming and web development.
+                My goal is to become a professional software developer.
+            </p>
+
+            <a href="#home" class="button">
+                Back to Top
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 Vishnu's Tech Website.
+            All Rights Reserved.
+        </p>
+
+        <address>
+            Email:
+            <a href="mailto:vishnu@example.com">
+                vishnu@example.com
+            </a>
+        </address>
+
+    </footer>
+
+</body>
+
+</html>
+

@@ -1,0 +1,9 @@
+class A{
+    public static void main(String[] args) {
+        char i;
+        for (i = 'A'; i < 'Z'; i++) {
+            System.out.println(i+" ");
+        }
+        System.out.println("final value:"+i);
+    }
+}

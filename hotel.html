@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Vennam's Hotel</title>
+
+
+
+    <style>
+
+
+
+        \* {
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f6f8;
+
+            color: #333;
+
+        }
+
+
+
+
+
+
+
+        header {
+
+            background-color: #222;
+
+            color: white;
+
+            padding: 20px 50px;
+
+
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+
+        header h1 {
+
+            margin: 0;
+
+        }
+
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        nav a:hover {
+
+            color: #ffd700;
+
+        }
+
+
+
+
+
+
+
+
+
+        .hero {
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+
+
+            background: linear-gradient(
+
+                rgba(0,0,0,0.6),
+
+                rgba(0,0,0,0.6)
+
+            ),
+
+            url("https://images.unsplash.com/photo-1566073771259-6a8506099945")
+
+            center/cover;
+
+
+
+            color: white;
+
+        }
+
+
+
+        .hero h2 {
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .hero p {
+
+            font-size: 18px;
+
+        }
+
+
+
+
+
+
+
+
+
+        .services {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 40px auto;
+
+        }
+
+
+
+        .services h2 {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+
+        .service-container {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+
+        .service-card {
+
+            background-color: white;
+
+            padding: 30px 20px;
+
+
+
+            text-align: center;
+
+
+
+            border-radius: 10px;
+
+
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+
+
+            cursor: pointer;
+
+
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .service-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+
+        }
+
+
+
+        .service-card .icon {
+
+            font-size: 45px;
+
+        }
+
+
+
+        .service-card h3 {
+
+            margin: 15px 0 10px;
+
+        }
+
+
+
+        .service-card p {
+
+            color: #666;
+
+        }
+
+
+
+
+
+
+
+
+
+        .form-container {
+
+            width: 90%;
+
+            max-width: 500px;
+
+
+
+            margin: 0px auto;
+
+
+
+            background-color: white;
+
+
+
+            padding: 50px;
+
+
+
+            border-radius: 10px;
+
+
+
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+
+
+
+            display: none;
+
+        }
+
+
+
+        .form-container.active {
+
+            display: block;
+
+        }
+
+
+
+        .form-container h2 {
+
+            text-align: center;
+
+
+
+            margin-bottom: 25px;
+
+
+
+            border-bottom: 2px solid #333;
+
+
+
+            padding-bottom: 10px;
+
+        }
+
+
+
+        label {
+
+            display: block;
+
+
+
+            margin-top: 15px;
+
+            margin-bottom: 6px;
+
+
+
+            font-weight: bold;
+
+        }
+
+
+
+        input,
+
+        select,
+
+        textarea {
+
+            width: 100%;
+
+
+
+            padding: 12px;
+
+
+
+            border: 1px solid #aaa;
+
+
+
+            border-radius: 5px;
+
+
+
+            font-size: 15px;
+
+        }
+
+
+
+        textarea {
+
+            resize: vertical;
+
+        }
+
+
+
+
+
+
+
+
+
+        .row {
+
+            display: grid;
+
+
+
+            grid-template-columns: 1fr 1fr;
+
+
+
+            gap: 20px;
+
+        }
+
+
+
+
+
+
+
+
+
+        .option {
+
+            margin: 10px 0;
+
+        }
+
+
+
+        .option input {
+
+            width: auto;
+
+        }
+
+
+
+        .option label {
+
+            display: inline;
+
+
+
+            margin-left: 5px;
+
+
+
+            font-weight: normal;
+
+        }
+
+
+
+
+
+
+
+
+
+        .food-category {
+
+            margin-top: 25px;
+
+
+
+            padding: 15px;
+
+
+
+            background-color: #f7f7f7;
+
+
+
+            border-radius: 8px;
+
+        }
+
+
+
+        .food-category h3 {
+
+            margin-top: 0;
+
+        }
+
+
+
+
+
+
+
+
+
+        .buttons {
+
+            text-align: center;
+
+
+
+            margin-top: 30px;
+
+        }
+
+
+
+        button {
+
+            padding: 12px 25px;
+
+
+
+            border: none;
+
+
+
+            border-radius: 5px;
+
+
+
+            cursor: pointer;
+
+
+
+            font-size: 16px;
+
+
+
+            margin: 5px;
+
+        }
+
+
+
+        .submit {
+
+            background-color: #222;
+
+            color: white;
+
+        }
+
+
+
+        .back {
+
+            background-color: #ddd;
+
+            color: #222;
+
+        }
+
+
+
+        button:hover {
+
+            opacity: 0.8;
+
+        }
+
+
+
+
+
+
+
+
+
+        footer {
+
+            margin-top: 0px;
+
+
+
+            background-color: #222;
+
+
+
+            color: white;
+
+
+
+            text-align: center;
+
+
+
+            padding: 20px;
+
+        }
+
+
+
+
+
+
+
+
+
+        @media(max-width: 700px) {
+
+
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+
+
+            .service-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+            .row {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+            .hero h2 {
+
+                font-size: 30px;
+
+            }
+
+        }
+
+
+
+    
+        /* Food menu */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .food-item {
+            background: white;
+            border: 1px solid #e2e2e2;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .food-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 14px rgba(0,0,0,0.14);
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .food-info {
+            padding: 12px;
+        }
+
+        .food-name-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .food-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .food-price {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .quantity-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qty-btn {
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            margin: 0;
+            border-radius: 50%;
+            background: #222;
+            color: white;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .qty-btn:hover {
+            opacity: 0.85;
+        }
+
+        .quantity {
+            min-width: 22px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .food-total {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .order-summary {
+            margin-top: 25px;
+            padding: 18px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            text-align: right;
+        }
+
+        .order-summary strong {
+            font-size: 20px;
+        }
+
+        @media(max-width: 700px) {
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+
+<header>
+
+
+
+    <h1>Vennam's Hotel</h1>
+
+
+
+    <nav>
+
+
+
+        <a href="#" onclick="showHome()">Home</a>
+
+
+
+        <a href="#services">Services</a>
+
+
+
+        <a href="#contact">Contact</a>
+
+
+
+    </nav>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero" id="home">
+
+
+
+    <h2>Welcome to Vennam's Hotel</h2>
+
+
+
+    <p>
+
+        Comfortable Rooms • Delicious Food • Quality Services
+
+    </p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="services" id="services">
+
+
+
+    <h2>What Would You Like To Do?</h2>
+
+
+
+
+
+    <div class="service-container">
+
+
+
+
+
+
+
+
+
+        <div class="service-card"
+
+             onclick="openForm('roomForm')">
+
+
+
+            <div class="icon"></div>
+
+
+
+            <h3>Book a Room</h3>
+
+
+
+            <p>
+
+                Select your room and stay dates.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="service-card"
+
+             onclick="openForm('foodForm')">
+
+
+
+            <div class="icon"></div>
+
+
+
+            <h3>Order Food</h3>
+
+
+
+            <p>
+
+                Choose your favourite food.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="service-card"
+
+             onclick="openForm('guestForm')">
+
+
+
+            <div class="icon"></div>
+
+
+
+            <h3>Guest Registration</h3>
+
+
+
+            <p>
+
+                Register your guest details.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="service-card"
+
+             onclick="openForm('serviceForm')">
+
+
+
+            <div class="icon"></div>
+
+
+
+            <h3>Hotel Services</h3>
+
+
+
+            <p>
+
+                Request additional hotel services.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="service-card"
+
+             onclick="openForm('paymentForm')">
+
+
+
+            <div class="icon"></div>
+
+
+
+            <h3>Payment</h3>
+
+
+
+            <p>
+
+                Select your payment method.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="service-card"
+
+             onclick="openForm('bookingForm')">
+
+
+
+            <div class="icon"></div>
+
+
+
+            <h3>Complete Booking</h3>
+
+
+
+            <p>
+
+                Enter all booking information.
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-container" id="roomForm">
+
+
+
+    <h2>Room Booking</h2>
+
+
+
+    <form onsubmit="submitForm(event, 'Room Booking')">
+
+
+
+        <div class="row">
+
+
+
+            <div>
+
+
+
+                <label>Check-in Date</label>
+
+
+
+                <input
+
+                    type="date"
+
+                    required
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <div>
+
+
+
+                <label>Check-out Date</label>
+
+
+
+                <input
+
+                    type="date"
+
+                    required
+
+                >
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <label>Number of Adults</label>
+
+
+
+        <input
+
+            type="number"
+
+            min="1"
+
+            value="1"
+
+            required
+
+        >
+
+
+
+
+
+        <label>Number of Children</label>
+
+
+
+        <input
+
+            type="number"
+
+            min="0"
+
+            value="0"
+
+        >
+
+
+
+
+
+        <label>Select Room</label>
+
+
+
+        <select required>
+
+
+
+            <option value="">-- Select Room --</option>
+
+
+
+            <option>Single Bedroom</option>
+
+
+
+            <option>Double Bedroom</option>
+
+
+
+            <option>Deluxe Room</option>
+
+
+
+            <option>Family Room</option>
+
+
+
+            <option>1 BHK Apartment</option>
+
+
+
+            <option>2 BHK Apartment</option>
+
+
+
+            <option>Executive Suite</option>
+
+
+
+            <option>Presidential Suite</option>
+
+
+
+        </select>
+
+
+
+
+
+        <div class="buttons">
+
+
+
+            <button class="submit" type="submit">
+
+                Book Room
+
+            </button>
+
+
+
+            <button
+
+                type="button"
+
+                class="back"
+
+                onclick="showHome()">
+
+
+
+                Back
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-container" id="foodForm">
+    <h2>🍽️ Food Order</h2>
+
+    <form onsubmit="submitFoodOrder(event)">
+
+        <label>Room Number</label>
+        <input type="text" id="foodRoomNumber"
+               placeholder="Enter room number" required>
+
+        <div class="food-category">
+            <h3>South Indian Food</h3>
+            <div class="food-grid">
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=700&q=80" alt="Idly">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Idly</span><span class="food-price">₹60</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="idly">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('idly', -1)">−</button>
+                                <span class="quantity" id="qty-idly">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('idly', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=700&q=80" alt="Dosa">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Dosa</span><span class="food-price">₹80</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="dosa">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('dosa', -1)">−</button>
+                                <span class="quantity" id="qty-dosa">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('dosa', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__700_0_0_0_auto.jpg" alt="Masala Dosa">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Masala Dosa</span><span class="food-price">₹110</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="masala">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('masala', -1)">−</button>
+                                <span class="quantity" id="qty-masala">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('masala', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://myfoodstory.com/wp-content/uploads/2022/09/Medu-Vada-5.jpg" alt="Medu Vada">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Medu Vada</span><span class="food-price">₹70</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="vada">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('vada', -1)">−</button>
+                                <span class="quantity" id="qty-vada">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('vada', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=700&q=80" alt="Pongal">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Pongal</span><span class="food-price">₹90</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="pongal">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('pongal', -1)">−</button>
+                                <span class="quantity" id="qty-pongal">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('pongal', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-category">
+            <h3>North Indian Food</h3>
+            <div class="food-grid">
+
+                <div class="food-item">
+                    <img src="https://www.theflavorbender.com/wp-content/uploads/2021/09/Roti-Canai-6501-2.jpg" alt="Roti">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Roti</span><span class="food-price">₹40</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="roti">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('roti', -1)">−</button>
+                                <span class="quantity" id="qty-roti">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('roti', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://maayeka.com/wp-content/uploads/2025/10/butter-naan-tawa-naan-1-of-1.jpg" alt="Butter Naan">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Butter Naan</span><span class="food-price">₹60</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="naan">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('naan', -1)">−</button>
+                                <span class="quantity" id="qty-naan">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('naan', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://myfoodstory.com/wp-content/uploads/2021/07/restaurant-style-paneer-butter-masala-2-500x500.jpg" alt="Paneer Butter Masala">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Paneer Butter Masala</span><span class="food-price">₹180</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="paneer">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('paneer', -1)">−</button>
+                                <span class="quantity" id="qty-paneer">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('paneer', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=700&q=80" alt="Chole Bhature">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Chole Bhature</span><span class="food-price">₹150</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="chole">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('chole', -1)">−</button>
+                                <span class="quantity" id="qty-chole">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('chole', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-category">
+            <h3>Rice & Biryani</h3>
+            <div class="food-grid">
+
+                <div class="food-item">
+                    <img src="https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01.jpg" alt="Chicken Biryani">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Chicken Biryani</span><span class="food-price">₹220</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="chicken">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('chicken', -1)">−</button>
+                                <span class="quantity" id="qty-chicken">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('chicken', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://www.licious.in/blog/wp-content/uploads/2022/06/mutton-hyderabadi-biryani-01.jpg" alt="Mutton Biryani">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Mutton Biryani</span><span class="food-price">₹280</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="mutton">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('mutton', -1)">−</button>
+                                <span class="quantity" id="qty-mutton">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('mutton', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1596560548464-f010549b84d7?auto=format&fit=crop&w=700&q=80" alt="Veg Biryani">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Veg Biryani</span><span class="food-price">₹160</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="veg">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('veg', -1)">−</button>
+                                <span class="quantity" id="qty-veg">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('veg', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-category">
+            <h3>Desserts</h3>
+            <div class="food-grid">
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=700&q=80" alt="Gulab Jamun">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Gulab Jamun</span><span class="food-price">₹80</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="gulab">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('gulab', -1)">−</button>
+                                <span class="quantity" id="qty-gulab">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('gulab', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=700&q=80" alt="Kulfi">
+                    <div class="food-info">
+                        <div class="food-name-row"><span class="food-name">Kulfi</span><span class="food-price">₹90</span></div>
+                        <div class="quantity-row">
+                            <span class="food-total" data-total-for="kulfi">₹0</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn" onclick="changeQty('kulfi', -1)">−</button>
+                                <span class="quantity" id="qty-kulfi">0</span>
+                                <button type="button" class="qty-btn" onclick="changeQty('kulfi', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <div>Selected Items: <strong id="selectedCount">0</strong></div>
+            <div>Total Amount: <strong id="foodGrandTotal">₹0</strong></div>
+        </div>
+
+        <div class="buttons">
+            <button class="submit" type="submit">Order Food</button>
+            <button type="button" class="back" onclick="showHome()">Back</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-container" id="guestForm">
+
+
+
+    <h2>Guest Registration</h2>
+
+
+
+    <form onsubmit="submitForm(event, 'Guest Registration')">
+
+
+
+
+
+        <label>Full Name</label>
+
+
+
+        <input
+
+            type="text"
+
+            placeholder="Enter your full name"
+
+            required
+
+        >
+
+
+
+
+
+        <label>Email</label>
+
+
+
+        <input
+
+            type="email"
+
+            placeholder="Enter your email"
+
+            required
+
+        >
+
+
+
+
+
+        <label>Mobile Number</label>
+
+
+
+        <input
+
+            type="tel"
+
+            placeholder="Enter mobile number"
+
+            required
+
+        >
+
+
+
+
+
+        <label>Address</label>
+
+
+
+        <textarea
+
+            rows="4"
+
+            placeholder="Enter your address"
+
+            required
+
+        ></textarea>
+
+
+
+
+
+        <label>Government ID</label>
+
+
+
+        <select required>
+
+
+
+            <option value="">
+
+                -- Select ID --
+
+            </option>
+
+
+
+            <option>Aadhaar Card</option>
+
+
+
+            <option>Passport</option>
+
+
+
+            <option>Driving Licence</option>
+
+
+
+            <option>Voter ID</option>
+
+
+
+        </select>
+
+
+
+
+
+        <label>ID Number</label>
+
+
+
+        <input
+
+            type="text"
+
+            placeholder="Enter ID number"
+
+            required
+
+        >
+
+
+
+
+
+        <div class="buttons">
+
+
+
+            <button
+
+                class="submit"
+
+                type="submit">
+
+
+
+                Register Guest
+
+
+
+            </button>
+
+
+
+            <button
+
+                type="button"
+
+                class="back"
+
+                onclick="showHome()">
+
+
+
+                Back
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-container" id="serviceForm">
+
+
+
+    <h2>Hotel Services</h2>
+
+
+
+    <form onsubmit="submitForm(event, 'Hotel Service Request')">
+
+
+
+
+
+        <label>Room Number</label>
+
+
+
+        <input
+
+            type="text"
+
+            placeholder="Enter room number"
+
+            required
+
+        >
+
+
+
+
+
+        <label>Select Service</label>
+
+
+
+        <select required>
+
+
+
+            <option value="">
+
+                -- Select Service --
+
+            </option>
+
+
+
+            <option>Room Cleaning</option>
+
+
+
+            <option>Extra Bed</option>
+
+
+
+            <option>Laundry Service</option>
+
+
+
+            <option>Room Decoration</option>
+
+
+
+            <option>Wake-up Call</option>
+
+
+
+            <option>Airport Pickup</option>
+
+
+
+            <option>Room Maintenance</option>
+
+
+
+        </select>
+
+
+
+
+
+        <label>Additional Request</label>
+
+
+
+        <textarea
+
+            rows="4"
+
+            placeholder="Enter your request"
+
+        ></textarea>
+
+
+
+
+
+        <div class="buttons">
+
+
+
+            <button
+
+                class="submit"
+
+                type="submit">
+
+
+
+                Request Service
+
+
+
+            </button>
+
+
+
+            <button
+
+                type="button"
+
+                class="back"
+
+                onclick="showHome()">
+
+
+
+                Back
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-container" id="paymentForm">
+
+
+
+    <h2>Payment</h2>
+
+
+
+    <form onsubmit="submitForm(event, 'Payment')">
+
+
+
+
+
+        <label>Booking ID</label>
+
+
+
+        <input
+
+            type="text"
+
+            placeholder="Enter booking ID"
+
+            required
+
+        >
+
+
+
+
+
+        <label>Payment Method</label>
+
+
+
+        <select required>
+
+
+
+            <option value="">
+
+                -- Select Payment --
+
+            </option>
+
+
+
+            <option>Cash</option>
+
+
+
+            <option>Credit Card</option>
+
+
+
+            <option>Debit Card</option>
+
+
+
+            <option>UPI</option>
+
+
+
+            <option>Net Banking</option>
+
+
+
+        </select>
+
+
+
+
+
+        <label>Amount</label>
+
+
+
+        <input
+
+            type="number"
+
+            placeholder="Enter amount"
+
+            required
+
+        >
+
+
+
+
+
+        <div class="buttons">
+
+
+
+            <button
+
+                class="submit"
+
+                type="submit">
+
+
+
+                Make Payment
+
+
+
+            </button>
+
+
+
+            <button
+
+                type="button"
+
+                class="back"
+
+                onclick="showHome()">
+
+
+
+                Back
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-container" id="bookingForm">
+
+
+
+    <h2>Complete Hotel Booking</h2>
+
+
+
+    <form onsubmit="submitForm(event, 'Hotel Booking')">
+
+
+
+
+
+        <label>Full Name</label>
+
+
+
+        <input
+
+            type="text"
+
+            placeholder="Enter your name"
+
+            required
+
+        >
+
+
+
+
+
+        <div class="row">
+
+
+
+            <div>
+
+
+
+                <label>Email</label>
+
+
+
+                <input
+
+                    type="email"
+
+                    placeholder="Enter email"
+
+                    required
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <div>
+
+
+
+                <label>Mobile Number</label>
+
+
+
+                <input
+
+                    type="tel"
+
+                    placeholder="Enter mobile number"
+
+                    required
+
+                >
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="row">
+
+
+
+            <div>
+
+
+
+                <label>Check-in</label>
+
+
+
+                <input
+
+                    type="date"
+
+                    required
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <div>
+
+
+
+                <label>Check-out</label>
+
+
+
+                <input
+
+                    type="date"
+
+                    required
+
+                >
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <label>Room Type</label>
+
+
+
+        <select required>
+
+
+
+            <option value="">
+
+                -- Select Room --
+
+            </option>
+
+
+
+            <option>Single Bedroom</option>
+
+
+
+            <option>Double Bedroom</option>
+
+
+
+            <option>Deluxe Room</option>
+
+
+
+            <option>Family Room</option>
+
+
+
+            <option>1 BHK Apartment</option>
+
+
+
+            <option>2 BHK Apartment</option>
+
+
+
+            <option>Executive Suite</option>
+
+
+
+            <option>Presidential Suite</option>
+
+
+
+        </select>
+
+
+
+
+
+        <label>Payment Method</label>
+
+
+
+        <select required>
+
+
+
+            <option value="">
+
+                -- Select Payment --
+
+            </option>
+
+
+
+            <option>Cash</option>
+
+
+
+            <option>Credit / Debit Card</option>
+
+
+
+            <option>UPI</option>
+
+
+
+            <option>Net Banking</option>
+
+
+
+        </select>
+
+
+
+
+
+        <label>Special Requests</label>
+
+
+
+        <textarea
+
+            rows="4"
+
+            placeholder="Extra bed, decoration, food preference, etc."
+
+        ></textarea>
+
+
+
+
+
+        <div class="option">
+
+
+
+            <input
+
+                type="checkbox"
+
+                id="terms"
+
+                required
+
+            >
+
+
+
+            <label for="terms">
+
+                I agree to the hotel terms and conditions.
+
+            </label>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="buttons">
+
+
+
+            <button
+
+                class="submit"
+
+                type="submit">
+
+
+
+                Confirm Booking
+
+
+
+            </button>
+
+
+
+            <button
+
+                type="button"
+
+                class="back"
+
+                onclick="showHome()">
+
+
+
+                Back
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </form>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<footer id="contact">
+
+
+
+    <p>
+
+        📞 Contact: +91 98765 43210
+
+    </p>
+
+    <p>
+
+        📧 Email: info@vennamshotel.com
+
+    </p>
+    <p>
+
+        © 2026 Vennam's Hotel | All Rights Reserved
+
+    </p>
+</footer>
+<script>
+
+        const foodItems = {
+            idly:    { name: "Idly", price: 60 },
+            dosa:    { name: "Dosa", price: 80 },
+            masala:  { name: "Masala Dosa", price: 110 },
+            vada:    { name: "Medu Vada", price: 70 },
+            pongal:  { name: "Pongal", price: 90 },
+            roti:    { name: "Roti", price: 40 },
+            naan:    { name: "Butter Naan", price: 60 },
+            paneer:  { name: "Paneer Butter Masala", price: 180 },
+            chole:   { name: "Chole Bhature", price: 150 },
+            chicken: { name: "Chicken Biryani", price: 220 },
+            mutton:  { name: "Mutton Biryani", price: 280 },
+            veg:     { name: "Veg Biryani", price: 160 },
+            gulab:   { name: "Gulab Jamun", price: 80 },
+            kulfi:   { name: "Kulfi", price: 90 }
+        };
+
+        const foodQuantities = {};
+
+        function changeQty(id, change) {
+            foodQuantities[id] = Math.max(0, (foodQuantities[id] || 0) + change);
+
+            document.getElementById("qty-" + id).textContent = foodQuantities[id];
+
+            const itemTotal = foodQuantities[id] * foodItems[id].price;
+            document.querySelector('[data-total-for="' + id + '"]').textContent =
+                "₹" + itemTotal;
+
+            updateFoodSummary();
+        }
+
+        function updateFoodSummary() {
+            let totalItems = 0;
+            let grandTotal = 0;
+
+            Object.keys(foodItems).forEach(function(id) {
+                const qty = foodQuantities[id] || 0;
+                totalItems += qty;
+                grandTotal += qty * foodItems[id].price;
+            });
+
+            document.getElementById("selectedCount").textContent = totalItems;
+            document.getElementById("foodGrandTotal").textContent = "₹" + grandTotal;
+        }
+
+        function submitFoodOrder(event) {
+            event.preventDefault();
+
+            const room = document.getElementById("foodRoomNumber").value;
+            const selected = [];
+
+            Object.keys(foodItems).forEach(function(id) {
+                const qty = foodQuantities[id] || 0;
+
+                if (qty > 0) {
+                    selected.push(
+                        foodItems[id].name + " × " + qty +
+                        " = ₹" + (qty * foodItems[id].price)
+                    );
+                }
+            });
+
+            if (selected.length === 0) {
+                alert("Please select at least one food item.");
+                return;
+            }
+
+            const total = Object.keys(foodItems).reduce(function(sum, id) {
+                return sum + (foodQuantities[id] || 0) * foodItems[id].price;
+            }, 0);
+
+            alert(
+                "Food Order submitted successfully!\\n\\n" +
+                "Room Number: " + room + "\\n\\n" +
+                selected.join("\\n") +
+                "\\n\\nTotal Amount: ₹" + total
+            );
+
+            Object.keys(foodItems).forEach(function(id) {
+                foodQuantities[id] = 0;
+                document.getElementById("qty-" + id).textContent = "0";
+                document.querySelector('[data-total-for="' + id + '"]').textContent = "₹0";
+            });
+
+            updateFoodSummary();
+            showHome();
+        }
+
+    function openForm(formId) {
+
+        let forms =
+
+            document.querySelectorAll(".form-container");
+
+        forms.forEach(function(form) {
+
+            form.classList.remove("active");
+
+        });
+        // Hide services
+        document.querySelector(".services").style.display =
+
+            "none";
+
+        document.querySelector(".hero").style.display =
+
+            "none";
+
+        // Show selected form
+
+        document.getElementById(formId)
+
+            .classList.add("active");
+
+        // Scroll to form
+
+
+
+        document.getElementById(formId)
+
+            .scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+
+
+    }
+
+    function showHome() {
+
+
+
+        let forms =
+
+            document.querySelectorAll(".form-container");
+
+
+
+        forms.forEach(function(form) {
+
+
+
+            form.classList.remove("active");
+
+
+
+        });
+
+
+
+
+
+        document.querySelector(".services").style.display =
+
+            "block";
+
+
+
+        document.querySelector(".hero").style.display =
+
+            "block";
+
+
+
+
+
+        window.scrollTo({
+
+
+
+            top: 0,
+
+
+
+            behavior: "smooth"
+
+
+
+        });
+
+
+
+    }
+
+    function submitForm(event, formName) {
+        event.preventDefault();
+        alert(
+
+            formName +
+
+            " submitted successfully!"
+
+        );
+        showHome();
+    }
+</script>
+</body>
+</html>
